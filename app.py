@@ -1,13 +1,15 @@
 import os
+from dotenv import load_dotenv
 import streamlit as st
 from langchain_community.llms import OpenAI
 from langchain_experimental.agents import create_csv_agent
-# DONT SET TO ALWAYS RERUN THE SCRIPT AS IT WILL RELOAD THE AGENT EVERYTIME AND WILL USE OPEN AI API CREDITS
-
 
 def main():
-    # HIDE THIS IF WE ARE GOING TO DEPLOY
-    OPENAI_API_KEY = "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"
+    # Load environment variables from .env file
+    load_dotenv()
+
+    # Access the OpenAI API key
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
     st.header("GenMed - General Medical Chatbot 💊") 
     st.markdown("GenMed is a general medical chatbot that can answer questions about your medication. 😊")
