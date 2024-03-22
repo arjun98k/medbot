@@ -5,11 +5,7 @@ from langchain_community.llms import OpenAI
 from langchain_experimental.agents import create_csv_agent
 
 def main():
-    # Load environment variables from .env file
-    load_dotenv()
-
-    # Access the OpenAI API key
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    OPENAI_API_KEY="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"
 
     st.header("GenMed - General Medical Chatbot 💊") 
     st.markdown("GenMed is a general medical chatbot that can answer questions about your medication. 😊")
